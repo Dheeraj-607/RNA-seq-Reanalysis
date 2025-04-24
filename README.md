@@ -141,7 +141,5 @@ jupyter lab
 ---
 
 <div align="center">
-  <sub>Built with ❤️ and 
-  <img src="https://scanpy.readthedocs.io/en/stable/_static/scanpy_logo.png" width="60">
-  </sub>
+  <sub>Built with ❤️ by Dheeraj  </sub>
 </div>
