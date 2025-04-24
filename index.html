@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroCell Explorer | scRNA-seq Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="particles-background"></div>
+    
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-brain"></i></span>
+                <span class="logo-text">NeuroCell Explorer</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#intro" class="nav-link active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="#methods" class="nav-link"><i class="fas fa-microscope"></i> <span>Methods</span></a></li>
+                <li><a href="#results" class="nav-link"><i class="fas fa-chart-network"></i> <span>Results</span></a></li>
+                <li><a href="#explore" class="nav-link"><i class="fas fa-search"></i> <span>Explore</span></a></li>
+                <li><a href="#data" class="nav-link"><i class="fas fa-database"></i> <span>Data</span></a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="intro" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Decoding Brain Cell Diversity</h1>
+                    <h2 class="hero-subtitle">Single-Cell RNA-seq Reanalysis of Darmanis et al. (2015)</h2>
+                    <p class="hero-description">Modern computational approaches to uncover transcriptional signatures in human brain cells</p>
+                    <div class="hero-buttons">
+                        <a href="#explore" class="btn primary-btn">Explore Data <i class="fas fa-arrow-down"></i></a>
+                        <a href="#methods" class="btn outline-btn">View Methods <i class="fas fa-flask"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="dna-animation">
+                        <div class="dna-strand"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Methods Section -->
+        <section id="methods" class="section methods-section">
+            <div class="section-header">
+                <h2 class="section-title"><span class="highlight">Analysis</span> Pipeline</h2>
+                <p class="section-subtitle">Our modern computational approach to single-cell analysis</p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="pipeline-steps">
+                <!-- Step 1 -->
+                <div class="pipeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Data Acquisition</h3>
+                        <div class="step-details">
+                            <p><strong>Dataset:</strong> GSE67835 (466 cells)</p>
+                            <p><strong>Source:</strong> Adult & fetal human brain</p>
+                            <p><strong>Format:</strong> 466 .csv.gz files</p>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="pipeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Quality Control</h3>
+                        <div class="step-details">
+                            <p>Filtered cells with <200 genes</p>
+                            <p>Removed genes in <3 cells</p>
+                            <p>Mitochondrial gene filtering</p>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="pipeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Normalization</h3>
+                        <div class="step-details">
+                            <p>Total-count normalization</p>
+                            <p>Log1p transformation</p>
+                            <p>HVG selection (2,000 genes)</p>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-balance-scale-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="pipeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Dimensionality Reduction</h3>
+                        <div class="step-details">
+                            <p>PCA (50 components)</p>
+                            <p>Neighborhood graph construction</p>
+                            <p>UMAP visualization</p>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="pipeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Clustering</h3>
+                        <div class="step-details">
+                            <p>Leiden algorithm</p>
+                            <p>Resolution = 0.6</p>
+                            <p>13 distinct clusters</p>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <h3 class="stack-title">Technical Stack</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <img src="https://scanpy.readthedocs.io/en/stable/_static/scanpy_logo.png" alt="Scanpy" class="tech-logo">
+                        <span class="tech-name">Scanpy</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" alt="Python" class="tech-logo">
+                        <span class="tech-name">Python 3</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" alt="Jupyter" class="tech-logo">
+                        <span class="tech-name">Jupyter</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" class="tech-logo">
+                        <span class="tech-name">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="section results-section">
+            <div class="section-header">
+                <h2 class="section-title">Cluster <span class="highlight">Visualization</span></h2>
+                <p class="section-subtitle">UMAP projection of 13 distinct cell populations</p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="results-container">
+                <div class="umap-container">
+                    <div id="umapPlot" class="umap-plot"></div>
+                    <div class="plot-controls">
+                        <div class="control-group">
+                            <label for="colorScheme">Color Scheme</label>
+                            <select id="colorScheme">
+                                <option value="clusters">Clusters</option>
+                                <option value="cellType">Cell Type</option>
+                                <option value="nGenes">Gene Count</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="pointSize">Point Size</label>
+                            <input type="range" id="pointSize" min="1" max="10" value="4">
+                        </div>
+                        <div class="control-group">
+                            <label for="opacity">Opacity</label>
+                            <input type="range" id="opacity" min="0.1" max="1" step="0.1" value="0.8">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cluster-notes">
+                    <h3 class="notes-title">Cluster Observations</h3>
+                    <div class="observation-cards">
+                        <div class="observation-card">
+                            <div class="cluster-color" style="background-color: #1f77b4;"></div>
+                            <div class="observation-content">
+                                <h4>Cluster 0</h4>
+                                <p>Neuronal signature. High expression of synaptic markers.</p>
+                            </div>
+                        </div>
+                        <div class="observation-card">
+                            <div class="cluster-color" style="background-color: #ff7f0e;"></div>
+                            <div class="observation-content">
+                                <h4>Cluster 4</h4>
+                                <p>Microglial population. MHC class I genes present.</p>
+                            </div>
+                        </div>
+                        <div class="observation-card">
+                            <div class="cluster-color" style="background-color: #2ca02c;"></div>
+                            <div class="observation-content">
+                                <h4>Cluster 7</h4>
+                                <p>Oligodendrocyte precursor cells. Proliferation markers.</p>
+                            </div>
+                        </div>
+                        <div class="observation-card">
+                            <div class="cluster-color" style="background-color: #d62728;"></div>
+                            <div class="observation-content">
+                                <h4>Cluster 12</h4>
+                                <p>Endothelial cells. Vascular markers expressed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Interactive Explorer -->
+                <section id="explore" class="section explore-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Gene <span class="highlight">Explorer</span></h2>
+                        <p class="section-subtitle">Investigate gene expression patterns across clusters</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    
+                    <div class="explorer-container">
+                        <div class="gene-search-container">
+                            <div class="search-box">
+                                <input type="text" id="geneSearch" placeholder="Search gene (e.g., SOX2, MBP)" autocomplete="off">
+                                <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+                            </div>
+                            <div class="search-suggestions">
+                                <span>Loading gene suggestions...</span>
+                                
+                            </div>
+                            
+                            <div id="geneResults" class="gene-results">
+                                <div class="empty-state">
+                                    <i class="fas fa-dna"></i>
+                                    <h3>Explore Gene Expression</h3>
+                                    <p>Enter a gene symbol to view its expression across clusters</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        <!-- Data Section -->
+        <section id="data" class="section data-section">
+            <div class="section-header">
+                <h2 class="section-title">Data <span class="highlight">Resources</span></h2>
+                <p class="section-subtitle">Access our processed datasets and analysis code</p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="data-resources">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3 class="resource-title">Gene Count Matrix</h3>
+                    <p class="resource-description">Processed expression matrix in CSV format</p>
+                    <a href="data/gene_counts_matrix_output.csv" class="resource-download">
+                        <i class="fas fa-download"></i> Download (CSV)
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3 class="resource-title">Processed Data</h3>
+                    <p class="resource-description">Complete AnnData object with all results</p>
+                    <a href="data/processed_data_output.h5ad" class="resource-download">
+                        <i class="fas fa-download"></i> Download (h5ad)
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="resource-title">Analysis Code</h3>
+                    <p class="resource-description">Full reproducible analysis pipeline</p>
+                    <a href="https://github.com/yourusername/steered-project" class="resource-download" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-brain"></i></span>
+                    <span class="logo-text">NeuroCell Explorer</span>
+                </div>
+                <p class="footer-description">Modern single-cell RNA-seq analysis of human brain cells</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h3 class="link-title">Project</h3>
+                    <a href="#intro" class="footer-link">Introduction</a>
+                    <a href="#methods" class="footer-link">Methods</a>
+                    <a href="#results" class="footer-link">Results</a>
+                </div>
+                
+                <div class="link-group">
+                    <h3 class="link-title">Resources</h3>
+                    <a href="#explore" class="footer-link">Gene Explorer</a>
+                    <a href="#data" class="footer-link">Data Download</a>
+                    <a href="https://github.com/yourusername/steered-project" class="footer-link" target="_blank">GitHub</a>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 MSc Bioinformatics - University of Leicester</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
