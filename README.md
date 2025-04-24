@@ -131,23 +131,6 @@ jupyter lab
 
 ---
 
-## 📚 Citation
-
-```bibtex
-@article{darmanis2015survey,
-  title={A survey of human brain transcriptome diversity at the single cell level},
-  author={Darmanis, Spyros and Sloan, Steven A and Zhang, Ye and Enge, Martin and Caneda, Christine and Shuer, Lawrence M and Gephart, Melanie G Hayden and Barres, Ben A and Quake, Stephen R},
-  journal={PNAS},
-  volume={112},
-  number={23},
-  pages={7285--7290},
-  year={2015},
-  publisher={National Academy of Sciences}
-}
-```
-
----
-
 ## 👨‍💻 Author  
 **Dheeraj**  
 📧 *MSc Bioinformatics Candidate*  
